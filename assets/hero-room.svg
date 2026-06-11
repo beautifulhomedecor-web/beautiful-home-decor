@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf6f0" />
+      <stop offset="50%" stop-color="#ebdcc5" />
+      <stop offset="100%" stop-color="#dfd0bc" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ddc28e" />
+      <stop offset="100%" stop-color="#c9a96e" />
+    </linearGradient>
+    <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c2c2" />
+      <stop offset="100%" stop-color="#d4a0a0" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#70321e" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="1000" fill="url(#bgGrad)" />
+  
+  <!-- Abstract Shapes for depth -->
+  <circle cx="650" cy="300" r="250" fill="url(#roseGrad)" opacity="0.25" filter="blur(40px)" />
+  <path d="M-100,600 C150,500 450,750 900,600 L900,1000 L-100,1000 Z" fill="#f5ede2" opacity="0.5" />
+  
+  <!-- Arched Window Frame -->
+  <path d="M 250 800 L 250 350 A 150 150 0 0 1 550 350 L 550 800" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.6" />
+  <path d="M 270 800 L 270 360 A 130 130 0 0 1 530 360 L 530 800" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.3" />
+  
+  <!-- Sunbeams / Rays -->
+  <line x1="150" y1="200" x2="450" y2="500" stroke="#faf6f0" stroke-width="60" opacity="0.15" stroke-linecap="round" />
+  <line x1="280" y1="150" x2="580" y2="450" stroke="#faf6f0" stroke-width="40" opacity="0.15" stroke-linecap="round" />
+
+  <!-- Sofa Outline (Artisan Curved Sofa) -->
+  <path d="M 150 850 C 150 780 200 750 300 750 C 400 750 450 720 500 720 C 550 720 650 740 680 810 L 680 850 Z" fill="#ffffff" fill-opacity="0.35" stroke="url(#goldGrad)" stroke-width="2.5" filter="url(#shadow)" />
+  <path d="M 180 850 C 180 810 220 790 300 790 C 380 790 420 810 420 850" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.5" />
+  <path d="M 420 850 C 420 810 460 790 540 790 C 620 790 650 810 650 850" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.5" />
+  
+  <!-- Pedestal Side Table -->
+  <path d="M 100 890 L 140 890 L 130 750 L 110 750 Z" fill="url(#goldGrad)" opacity="0.9" />
+  <ellipse cx="120" cy="750" rx="30" ry="10" fill="#ffffff" stroke="url(#goldGrad)" stroke-width="1.5" />
+  
+  <!-- Sculptural Vase on Table -->
+  <path d="M 115 750 C 110 730 105 725 105 715 C 105 700 135 700 135 715 C 135 725 130 730 125 750 Z" fill="#ffffff" stroke="url(#goldGrad)" stroke-width="1" />
+  <path d="M 120 700 Q 120 680 135 670" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-linecap="round" />
+  <circle cx="135" cy="670" r="3" fill="#c9a96e" />
+
+  <!-- Floor Lamp -->
+  <path d="M 620 870 L 620 500" fill="none" stroke="#1a1008" stroke-width="2.5" opacity="0.8" />
+  <path d="M 620 870 L 600 890 L 640 890 Z" fill="#1a1008" opacity="0.8" />
+  <!-- Arc Shade -->
+  <path d="M 620 500 Q 620 420 560 420" fill="none" stroke="#1a1008" stroke-width="2.5" opacity="0.8" />
+  <path d="M 570 420 C 540 420 520 440 520 460 L 580 460 C 580 440 580 420 570 420" fill="url(#goldGrad)" stroke="url(#goldGrad)" stroke-width="1" />
+  <circle cx="550" cy="465" r="25" fill="#faf6f0" opacity="0.8" filter="blur(10px)" />
+  <circle cx="550" cy="465" r="10" fill="#ffffff" />
+  
+  <!-- Subtle line details -->
+  <line x1="80" y1="890" x2="720" y2="890" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Decorative Star -->
+  <path d="M 400 250 L 404 265 L 420 265 L 407 274 L 412 290 L 400 280 L 388 290 L 393 274 L 380 265 L 396 265 Z" fill="url(#goldGrad)" opacity="0.8" />
+</svg>

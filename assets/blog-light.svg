@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5ede2" />
+      <stop offset="100%" stop-color="#dfd4c0" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ddc28e" />
+      <stop offset="100%" stop-color="#c9a96e" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#ffeed0" />
+      <stop offset="100%" stop-color="#ffeed0" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg)" />
+
+  <!-- Abstract light play -->
+  <polygon points="120,0 280,0 350,250 50,250" fill="url(#glow)" opacity="0.4" />
+  
+  <line x1="200" y1="0" x2="200" y2="250" stroke="#ffffff" stroke-width="2" opacity="0.3" stroke-dasharray="8 8" />
+  
+  <circle cx="200" cy="125" r="45" fill="none" stroke="url(#gold)" stroke-width="1.5" />
+  <circle cx="200" cy="125" r="5" fill="url(#gold)" />
+  
+  <path d="M 150 125 L 250 125" stroke="url(#gold)" stroke-width="1" opacity="0.5" />
+
+  <text x="20" y="35" font-family="'Outfit', sans-serif" font-size="10" font-weight="600" fill="url(#gold)" letter-spacing="1">LUMINANCE</text>
+</svg>

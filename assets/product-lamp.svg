@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf3e8" />
+      <stop offset="100%" stop-color="#ddd0b8" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ddc28e" />
+      <stop offset="100%" stop-color="#c9a96e" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#fff5e0" />
+      <stop offset="100%" stop-color="#fff5e0" stop-opacity="0" />
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#70503e" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)" />
+
+  <!-- Ambient Light Glow in background -->
+  <circle cx="200" cy="200" r="120" fill="url(#glow)" opacity="0.85" filter="blur(10px)" />
+  <circle cx="200" cy="200" r="60" fill="#ffffff" filter="blur(4px)" />
+
+  <!-- Arch metal rod of the lamp -->
+  <path d="M 270 410 L 270 300 A 70 70 0 0 0 130 300 L 130 220" fill="none" stroke="#1a1008" stroke-width="3.5" stroke-linecap="round" />
+  
+  <!-- Base of the lamp -->
+  <ellipse cx="270" cy="410" rx="35" ry="10" fill="#1a1008" />
+  
+  <!-- Sculptural ceramic base (decorative pedestal) -->
+  <path d="M 255 410 L 285 410 L 280 370 L 260 370 Z" fill="url(#gold)" />
+
+  <!-- Lamp Shade (Glass Sphere) -->
+  <circle cx="130" cy="200" r="40" fill="rgba(255,255,255,0.35)" stroke="url(#gold)" stroke-width="1.5" filter="url(#shadow)" />
+  <circle cx="130" cy="200" r="15" fill="#ffffff" />
+  
+  <!-- Light beam down -->
+  <polygon points="90,500 170,500 135,240 125,240" fill="url(#glow)" opacity="0.25" />
+
+  <!-- Text Label -->
+  <text x="200" y="470" font-family="'Playfair Display', serif" font-size="14" font-weight="500" fill="#1a1008" letter-spacing="2" text-anchor="middle" opacity="0.8">LUNA LAMP</text>
+</svg>

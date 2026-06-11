@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aesthetic Canva Templates — Ethereal, high-converting drag-and-drop Canva templates designed for home decor creators, interior designers, and visual stylists." />
+  <meta name="keywords" content="Canva templates, Pinterest templates, home decor creators, interior design templates, Instagram templates, visual branding, aesthetic templates" />
+  
+  <!-- Open Graph / Facebook / Pinterest -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Aesthetic Canva Templates for Home Decor Creators" />
+  <meta property="og:description" content="Ethereal, high-converting drag-and-drop Canva templates designed for home decor creators, interior designers, and visual stylists." />
+  <meta property="og:image" content="assets/preview-6-hero-cover.png" />
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Aesthetic Canva Templates for Home Decor Creators" />
+  <meta property="twitter:description" content="Ethereal, high-converting drag-and-drop Canva templates designed for home decor creators, interior designers, and visual stylists." />
+  <meta property="twitter:image" content="assets/preview-6-hero-cover.png" />
+
+  <title>Aesthetic Canva Templates — Premium Canva Templates | Antigravity 2.0 Liquid Glass</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics (Replace G-PLACEHOLDER with your actual Google Analytics Measurement ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PLACEHOLDER');
+  </script>
+</head>
+<body>
+
+  <!-- ═══ URGENCY BANNER ═══ -->
+  <div class="urgency-banner" id="urgencyBanner">
+    <span>🔥 50% OFF — Use code SAVE50 — Ends Soon (<span id="countdownTimer">24:00:00</span>)! <a href="#products" class="urgency-banner__link">Shop Now →</a></span>
+  </div>
+
+  <!-- ═══ ADMIN HUD BAR ═══ -->
+  <div class="admin-hud" id="adminHud">
+    <div class="admin-hud__status">
+      <span class="admin-hud__dot"></span>
+      Admin Mode Active &bull; <strong style="margin-left:0.25rem;">homedecor</strong>
+      <div class="admin-hud__save-indicator" id="hudSaveIndicator">
+        <div class="admin-hud__spinner"></div>
+        <span>Saving changes...</span>
+      </div>
+    </div>
+    <div style="display:flex; gap:0.75rem; align-items:center;">
+      <button class="admin-hud__reset" id="hudReset" style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.3); padding:0.35rem 0.85rem; border-radius:var(--radius-pill); color:white; font-size:0.75rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; transition:all 0.3s ease;">Reset Site</button>
+      <button class="admin-hud__logout" id="hudLogout">Log Out</button>
+    </div>
+  </div>
+
+  <!-- ═══ LOADING SCREEN ═══ -->
+  <div class="loader" id="loader">
+    <div class="loader__logo">Beautiful Home Decor</div>
+    <div class="loader__bar-track">
+      <div class="loader__bar"></div>
+    </div>
+  </div>
+
+  <!-- ═══ SCROLL PROGRESS ═══ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══ CURSOR GLOW ═══ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ═══ LIQUID CANVAS (Animated Background) ═══ -->
+  <div class="liquid-canvas">
+    <video autoplay loop muted playsinline class="liquid-canvas__video" id="bgVideo">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-curtains-blowing-in-the-wind-4853-large.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="orb orb--gold"></div>
+  <div class="orb orb--rose"></div>
+  <div class="orb orb--cream"></div>
+  <div class="orb orb--beige"></div>
+
+  <!-- ═══ PAGE CONTENT ═══ -->
+  <div class="page-content">
+
+    <!-- ─── FLOATING NAVIGATION ─── -->
+    <div class="nav-wrapper" id="navWrapper">
+      <nav class="navbar" id="navbar">
+        <a href="#" class="nav__logo" id="navLogo">
+          <span class="nav__logo-icon">✦</span>
+          <span class="nav__logo-text editable-text" data-layout-key="nav-logo-text" id="navLogoText">Beautiful Home Decor</span>
+        </a>
+
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#" class="nav__link active" id="nav-home"><span class="editable-text" data-layout-key="nav-home">Home</span></a></li>
+          <li><a href="#products" class="nav__link" id="nav-store"><span class="editable-text" data-layout-key="nav-store">Store</span></a></li>
+          <li><a href="#journal" class="nav__link" id="nav-blog"><span class="editable-text" data-layout-key="nav-blog">Blog</span></a></li>
+          <li><a href="#about" class="nav__link" id="nav-about"><span class="editable-text" data-layout-key="nav-about">About</span></a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <button class="nav__icon-btn" id="nav-search" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <button class="nav__icon-btn" id="nav-cart" aria-label="Shopping bag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <span class="badge" id="navCartBadge">0</span>
+          </button>
+          <button class="nav__icon-btn" id="nav-admin" aria-label="Admin panel">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </button>
+          <a href="#products" class="nav__cta" id="nav-cta-shop"><span class="btn-magnetic-inner editable-text" data-layout-key="nav-cta-shop">Shop Now</span></a>
+          <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- ─── HERO SECTION ─── -->
+    <section class="hero section" id="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <p class="hero__eyebrow editable-text" data-layout-key="hero-eyebrow">CANVA TEMPLATES — INSTANT DOWNLOAD</p>
+            <h1 class="hero__title editable-text" data-layout-key="hero-title">
+               Aesthetic Pinterest Templates for Home Decor Creators
+            </h1>
+            <p class="hero__desc editable-text" data-layout-key="hero-desc">
+              Ready-to-edit Canva templates designed to stop the scroll. Post beautiful, cohesive pins in minutes — no design skills needed.
+            </p>
+            <div class="hero__actions">
+              <a href="#products" class="btn-primary" id="hero-cta-explore">
+                <span class="btn-magnetic-inner editable-text" data-layout-key="hero-cta-explore">🛍 Shop Now</span>
+              </a>
+              <a href="https://beautifulhomedecor.gumroad.com/l/sumtam" target="_blank" class="btn-secondary" id="hero-cta-new">
+                <span class="btn-magnetic-inner editable-text" data-layout-key="hero-cta-new">View Templates →</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Floating Laptop Mockup container -->
+          <div class="hero__visual" style="position: relative;">
+            <!-- Floating Top Stat Card -->
+            <div class="hero__float-card hero__float-card--top glass">
+              <div class="stat-icon">⭐</div>
+              <div class="stat-number editable-text" data-layout-key="hero-stat-2-num">4.9/5</div>
+              <div class="stat-label editable-text" data-layout-key="hero-stat-2-lbl">Avg. Rating</div>
+            </div>
+
+            <div class="laptop-mockup-wrapper">
+              <div class="laptop-mockup">
+                <div class="laptop-screen">
+                  <div class="laptop-screen-content">
+                    <img src="assets/preview-3-templates-grid.png" alt="Canva Editor Workspace Mockup" id="heroImage" class="editable-image" data-layout-key="hero-image" decoding="async" />
+                    <div class="canva-editor-overlay">
+                      <div class="canva-sidebar">
+                        <span class="canva-dot"></span>
+                        <span class="canva-dot"></span>
+                        <span class="canva-dot"></span>
+                      </div>
+                      <div class="canva-toolbar">
+                        <span class="canva-btn-pill">Template Editor</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="laptop-base"></div>
+              </div>
+            </div>
+
+            <!-- Floating Bottom Stat Card -->
+            <div class="hero__float-card hero__float-card--bottom glass">
+              <div class="stat-icon">👥</div>
+              <div class="stat-number editable-text" data-layout-key="hero-stat-1-num">1,200+</div>
+              <div class="stat-label editable-text" data-layout-key="hero-stat-1-lbl">Happy Creators</div>
+            </div>
+
+            <!-- 3D Shadow -->
+            <div class="laptop-mockup-shadow" id="laptopShadow"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TRUST BAR ─── -->
+    <div class="trust-bar">
+      <div class="container trust-bar__container">
+        <div class="trust-item">
+          <span class="trust-icon">⬇️</span>
+          <div class="trust-text">
+            <span class="trust-title editable-text" data-layout-key="trust-1">Instant Download</span>
+            <span class="trust-desc editable-text" data-layout-key="trust-1-sub">Get your templates immediately</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🎨</span>
+          <div class="trust-text">
+            <span class="trust-title editable-text" data-layout-key="trust-2">Canva Editable</span>
+            <span class="trust-desc editable-text" data-layout-key="trust-2-sub">Works with FREE Canva</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🏷️</span>
+          <div class="trust-text">
+            <span class="trust-title editable-text" data-layout-key="trust-3">50% OFF Today</span>
+            <span class="trust-desc editable-text" data-layout-key="trust-3-sub">Use code SAVE50 at checkout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── BRAND STRIP (Marquee) ─── -->
+    <div class="brand-strip">
+      <div class="brand-strip__track" id="brandTrack">
+        <!-- Loaded dynamically by JS to keep scrolling items in sync -->
+      </div>
+    </div>
+
+
+    <!-- ─── PRODUCTS SECTION ─── -->
+    <section class="products section" id="products">
+      <div class="container">
+        <div class="products__header reveal">
+          <div>
+            <p class="section__label editable-text" data-layout-key="products-label">Our Collection</p>
+            <h2 class="section__title editable-text" data-layout-key="products-title">Pinterest & Instagram Templates</h2>
+            <p class="section__subtitle editable-text" data-layout-key="products-subtitle">Ready-to-edit Canva templates for home decor creators. Post beautiful, aesthetic content in minutes.</p>
+            <div class="promo-banner-glow">
+              <span class="promo-tag">Special Offer</span> Use code <strong class="promo-code">SAVE50</strong> in your cart for a 50% discount!
+            </div>
+          </div>
+          <div class="products__filters">
+            <button class="filter-btn active" id="filter-all" data-filter="all">All</button>
+            <button class="filter-btn" id="filter-pinterest" data-filter="pinterest">Pinterest Templates</button>
+            <button class="filter-btn" id="filter-instagram" data-filter="instagram">Instagram Templates</button>
+            <button class="filter-btn" id="filter-bundle" data-filter="bundle">Bundles</button>
+          </div>
+        </div>
+
+        <div class="products__grid" id="productsGrid">
+          <!-- Products dynamically loaded by app.js -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── HIGHLIGHT / FEATURED BANNER ─── -->
+    <section class="highlight section" id="highlight">
+      <div class="container">
+        <div class="highlight__card reveal">
+          <div class="highlight__image">
+            <img src="assets/preview-6-hero-cover.png" alt="Pinterest Templates Mockup" loading="lazy" decoding="async" class="editable-image" data-layout-key="highlight-image" />
+            <div class="highlight__image-tag-overlay">
+              <span class="editable-text" data-layout-key="highlight-image-tag">PINTEREST TEMPLATES</span>
+            </div>
+          </div>
+          <div class="highlight__content">
+            <span class="highlight__tag editable-text" data-layout-key="highlight-tag">✦ BEST SELLER</span>
+            <h2 class="highlight__title editable-text" data-layout-key="highlight-title">Pinterest Templates for Home Decor Creators</h2>
+            <p class="highlight__desc editable-text" data-layout-key="highlight-desc">
+              10 beautiful, ready-to-edit Pinterest templates designed for home decor creators. Post stunning, cohesive pins in minutes using Canva.
+            </p>
+            <div class="highlight__features">
+              <span class="highlight__feature">
+                <span class="highlight__feature-icon">✦</span>
+                <span class="editable-text" data-layout-key="highlight-feature-1">10 Templates</span>
+              </span>
+              <span class="highlight__feature">
+                <span class="highlight__feature-icon">✦</span>
+                <span class="editable-text" data-layout-key="highlight-feature-2">Canva Editable</span>
+              </span>
+              <span class="highlight__feature">
+                <span class="highlight__feature-icon">✦</span>
+                <span class="editable-text" data-layout-key="highlight-feature-3">Instant Download</span>
+              </span>
+              <span class="highlight__feature">
+                <span class="highlight__feature-icon">✦</span>
+                <span class="editable-text" data-layout-key="highlight-feature-4">Commercial Rights</span>
+              </span>
+            </div>
+            <a href="https://beautifulhomedecor.gumroad.com/l/sumtam" target="_blank" class="btn-primary" id="highlight-cta">
+              <span class="btn-magnetic-inner editable-text" data-layout-key="highlight-cta">
+                Get Templates Now
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── TESTIMONIALS ─── -->
+    <section class="testimonials section" id="testimonials">
+      <div class="container">
+        <div class="reveal">
+          <p class="section__label editable-text" data-layout-key="testimonials-label">WHAT OUR CUSTOMERS SAY</p>
+          <h2 class="section__title editable-text" data-layout-key="testimonials-title">What Our Customers Say</h2>
+          <p class="section__subtitle editable-text" data-layout-key="testimonials-subtitle">Real reviews from home decor creators who use our templates every day.</p>
+        </div>
+
+        <div class="testimonials__grid" id="testimonialsGrid">
+          <!-- Dynamically loaded by app.js -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── JOURNAL / BLOG ─── -->
+    <section class="journal section" id="journal">
+      <div class="container">
+        <div class="reveal">
+          <p class="section__label editable-text" data-layout-key="journal-label">Tips & Tutorials</p>
+          <h2 class="section__title editable-text" data-layout-key="journal-title">From the Blog</h2>
+          <p class="section__subtitle editable-text" data-layout-key="journal-subtitle">Tips, tutorials, and inspiration to grow your Pinterest and home decor brand.</p>
+        </div>
+
+        <div class="journal__grid" id="journalGrid">
+          <!-- Dynamically loaded by app.js -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── ABOUT SECTION ─── -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about__inner reveal">
+          <div class="about__content">
+            <p class="section__label editable-text" data-layout-key="about-label">ABOUT ME</p>
+            <h2 class="section__title editable-text" data-layout-key="about-title">Hello, I'm Pavan Sai! So glad you're here! ♡</h2>
+            <p class="about__text editable-text" data-layout-key="about-desc">
+              Hi! I'm Pavan Sai, a creator passionate about helping home decor lovers build their Pinterest presence with beautiful, ready-to-use Canva templates. I create high-quality aesthetic templates that save you time, elevate your brand, and help you share beautiful ideas that inspire and connect.
+            </p>
+            <div class="mission-box glass">
+              <h4 class="mission-title editable-text" data-layout-key="mission-title">✦ My Mission</h4>
+              <p class="mission-desc editable-text" data-layout-key="mission-desc">I create high-quality, aesthetic templates that save you time, elevate your brand, and help you share beautiful ideas that inspire and connect with your audience.</p>
+            </div>
+            <div class="about__social" style="margin-top:2rem; display:flex; flex-direction:column; gap:0.75rem; align-items:flex-start;">
+              <a href="https://pin.it/42pEUnOy6" target="_blank" class="btn-secondary" id="about-pinterest-link">
+                <span class="btn-magnetic-inner">📌 Pinterest — Follow for daily inspiration</span>
+              </a>
+              <a href="https://beautifulhomedecor.gumroad.com" target="_blank" class="btn-primary" id="about-shop-link">
+                <span class="btn-magnetic-inner">🛍 Gumroad — Shop Templates</span>
+              </a>
+            </div>
+          </div>
+          <div class="about__visual">
+            <div class="about__image-wrapper glass">
+              <img src="assets/professional_male_designer_spectacles.png" alt="Pavan Sai — Home Decor Template Creator" class="editable-image" data-layout-key="about-image" id="aboutImage" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── NEWSLETTER ─── -->
+    <section class="newsletter section" id="newsletter">
+      <div class="container">
+        <div class="newsletter__card reveal">
+          <div class="newsletter__icon">✉️</div>
+          <h2 class="newsletter__title editable-text" data-layout-key="newsletter-title">Get 1 Free Pinterest Template</h2>
+          <p class="newsletter__desc editable-text" data-layout-key="newsletter-desc">Subscribe and receive 1 free home decor Pinterest template instantly. No spam, ever.</p>
+          <form class="newsletter__form" id="newsletterForm" action="#" method="post" target="_blank">
+            <input type="email" name="EMAIL" class="newsletter__input" placeholder="Enter your email" aria-label="Email address" required id="newsletterEmail" />
+            <button type="submit" class="newsletter__submit editable-text" data-layout-key="newsletter-submit" id="newsletterSubmit">Get Templates</button>
+          </form>
+          <div class="newsletter__admin-config" id="newsletterAdminConfig" style="display:none; margin-top:1.5rem; width:100%; max-width:500px; text-align:left;">
+            <div style="margin-bottom: 1.25rem;">
+              <label style="display:block; font-size:0.75rem; font-weight:600; text-transform:uppercase; color:var(--color-gold); margin-bottom:0.5rem; letter-spacing:0.05em;">Mailchimp Form Action URL</label>
+              <input type="text" id="newsletterActionInput" placeholder="https://username.usXX.list-manage.com/subscribe/post?u=xxx&amp;id=xxx" style="width:100%; padding:0.6rem 1rem; font-family:var(--font-body); font-size:0.85rem; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius-sm); color:var(--color-ink); outline:none;" />
+              <p style="font-size:0.7rem; opacity:0.65; margin-top:0.25rem; line-height:1.3; color:var(--color-ink);">Get this URL from your Mailchimp Embed Form HTML (copy the exact <code>action="..."</code> link).</p>
+            </div>
+            <div>
+              <label style="display:block; font-size:0.75rem; font-weight:600; text-transform:uppercase; color:var(--color-gold); margin-bottom:0.5rem; letter-spacing:0.05em;">Web3Forms Access Key (For Chatbot Automation)</label>
+              <input type="text" id="chatbotKeyInput" placeholder="e.g. b4c9e8a1-3d7f-4b08-8e6d-9bcf51e220a1" style="width:100%; padding:0.6rem 1rem; font-family:var(--font-body); font-size:0.85rem; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius-sm); color:var(--color-ink); outline:none;" />
+              <p style="font-size:0.7rem; opacity:0.65; margin-top:0.25rem; line-height:1.3; color:var(--color-ink);">Get a free key instantly at <a href="https://web3forms.com/" target="_blank" style="color:var(--color-gold); text-decoration:underline;">web3forms.com</a> to enable automatic background emails to tumpalapavansai@gmail.com!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <div class="footer__logo">
+              <span class="footer__logo-icon">✦</span>
+              <span class="editable-text" data-layout-key="footer-logo">Beautiful Home Decor</span>
+            </div>
+            <p class="footer__tagline editable-text" data-layout-key="footer-tagline">Beautiful templates for home decor creators who love creating and inspiring.</p>
+            <div class="footer__promo-info" style="margin-top:1rem; font-size:0.85rem; color:var(--color-gold-light); display:flex; flex-direction:column; gap:0.25rem;">
+              <div><span style="opacity:0.75;">Active Promo Codes:</span></div>
+              <div><strong>SAVE50</strong> — 50% off Pinterest Templates</div>
+              <div><strong>INSTA50</strong> — 50% off Instagram Templates</div>
+            </div>
+            <div class="footer__social" style="margin-top:1.5rem; display:flex; gap:0.75rem;">
+              <a href="https://pin.it/42pEUnOy6" target="_blank" class="footer__social-link" aria-label="Pinterest" id="social-pinterest" title="Follow on Pinterest">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 00-4.37 23.17c-.1-.94-.2-2.38.04-3.41l1.39-5.87s-.35-.71-.35-1.76c0-1.65.96-2.88 2.15-2.88 1.01 0 1.5.76 1.5 1.67 0 1.02-.65 2.54-.98 3.95-.28 1.18.59 2.14 1.75 2.14 2.1 0 3.71-2.21 3.71-5.41 0-2.83-2.03-4.81-4.94-4.81-3.37 0-5.34 2.52-5.34 5.13 0 1.02.39 2.11.88 2.7a.35.35 0 01.08.34l-.33 1.33c-.05.22-.18.27-.41.16-1.55-.72-2.52-2.98-2.52-4.8 0-3.91 2.84-7.5 8.19-7.5 4.3 0 7.64 3.07 7.64 7.16 0 4.27-2.69 7.71-6.43 7.71-1.26 0-2.44-.65-2.84-1.42l-.77 2.95c-.28 1.08-1.04 2.43-1.55 3.26A12 12 0 1012 0z"/></svg>
+              </a>
+              <a href="https://beautifulhomedecor.gumroad.com" target="_blank" class="footer__social-link" aria-label="Gumroad" id="social-gumroad" title="Shop on Gumroad">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer__col-title">Templates</h4>
+            <div class="footer__col-links">
+              <a href="#products" class="footer__col-link">All Products</a>
+              <a href="#products" class="footer__col-link">Pinterest Templates</a>
+              <a href="#products" class="footer__col-link">Instagram Templates</a>
+              <a href="#newsletter" class="footer__col-link">Free Downloads</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer__col-title">Resources</h4>
+            <div class="footer__col-links">
+              <a href="#about" class="footer__col-link">Our Mission</a>
+              <a href="#journal" class="footer__col-link">Tips & Tutorials</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer__col-title">Support</h4>
+            <div class="footer__col-links">
+              <a href="mailto:tumpalapavansai@gmail.com" class="footer__col-link">Contact Desk</a>
+              <a href="#" class="footer__col-link">FAQ Guide</a>
+              <a href="#" class="footer__col-link">Refund Policy</a>
+              <a href="#" class="footer__col-link">License Terms</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copy editable-text" data-layout-key="footer-copy">&copy; 2026 Beautiful Home Decor. All rights reserved. Canva is a trademark of Canva Pty Ltd.</p>
+          <div class="footer__legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">License Agreements</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- .page-content -->
+
+  <!-- ═══ LOGIN MODAL ═══ -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="glass-modal">
+      <button class="modal__close" id="loginClose" aria-label="Close modal">&times;</button>
+      <div class="modal__header">
+        <span class="modal__icon">✦</span>
+        <h2 class="modal__title">Admin Authentication</h2>
+        <p class="modal__desc">Access administrative controls to edit products and upload new items.</p>
+      </div>
+      <form class="modal__form" id="loginForm">
+        <div class="modal__field">
+          <label class="modal__label" for="loginUser">Username</label>
+          <input type="text" class="modal__input" id="loginUser" required placeholder="Enter username" />
+        </div>
+        <div class="modal__field">
+          <label class="modal__label" for="loginPass">Passkey</label>
+          <input type="password" class="modal__input" id="loginPass" required placeholder="Enter passkey" />
+        </div>
+        <div class="modal__error" id="loginError"></div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+          <span class="btn-magnetic-inner">Authenticate</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ═══ ADMIN PRODUCT MODAL ═══ -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="glass-modal glass-modal--wide">
+      <button class="modal__close" id="adminClose" aria-label="Close modal">&times;</button>
+      <div class="modal__header">
+        <span class="modal__icon">✦</span>
+        <h2 class="modal__title" id="adminModalTitle">Add New Product</h2>
+        <p class="modal__desc">Enter product details and upload an SVG vector file or image.</p>
+      </div>
+      <form class="modal__form" id="adminForm">
+        <input type="hidden" id="adminProductId" />
+        
+        <div class="modal__field">
+          <label class="modal__label" for="adminName">Product Name</label>
+          <input type="text" class="modal__input" id="adminName" required placeholder="e.g. Aria Sculpted Vase" />
+        </div>
+        
+        <div class="modal__row">
+          <div class="modal__field">
+            <label class="modal__label" for="adminPrice">Price ($)</label>
+            <input type="number" class="modal__input" id="adminPrice" required placeholder="7" />
+          </div>
+          <div class="modal__field">
+            <label class="modal__label" for="adminCategory">Category</label>
+            <select class="modal__select" id="adminCategory" required>
+              <option value="pinterest">Pinterest Templates</option>
+              <option value="instagram">Instagram Templates</option>
+              <option value="bundle">Bundle</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal__field">
+          <label class="modal__label" for="adminColors">Colors (Comma-separated HSL/Hex, e.g. #f5f0e8, #c4a882)</label>
+          <input type="text" class="modal__input" id="adminColors" placeholder="#f5f0e8, #c4a882, #2d2418" />
+        </div>
+
+        <div class="modal__field">
+          <label class="modal__label" for="adminImage">Product Image / SVG File</label>
+          <div class="modal__file-drop" id="fileDropZone">
+            <input type="file" id="adminImage" accept=".svg,image/svg+xml,image/png,image/jpeg" style="display:none;" />
+            <div class="file-drop__content">
+              <span class="file-drop__icon">📁</span>
+              <p class="file-drop__text">Drag & drop your SVG/image file here or <span style="color:var(--color-gold); cursor:pointer; font-weight:600;">browse</span></p>
+              <p class="file-drop__filename" id="uploadFilename"></p>
+            </div>
+          </div>
+          <input type="hidden" id="adminImageData" />
+        </div>
+
+        <div class="modal__actions" style="margin-top:2rem; display:flex; gap:1rem;">
+          <button type="submit" class="btn-primary" style="flex:1; justify-content:center;">
+            <span class="btn-magnetic-inner" id="adminSubmitText">Save Product</span>
+          </button>
+          <button type="button" class="btn-secondary" id="adminDeleteBtn" style="display:none; color:var(--color-rose); border-color:rgba(212,160,160,0.4);">
+            <span class="btn-magnetic-inner">Delete Product</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Hidden inputs for general uploads -->
+  <input type="file" id="adminGeneralImageInput" accept=".svg,image/svg+xml,image/png,image/jpeg" style="display:none;" />
+
+  <!-- ═══ GLASS CART SIDEBAR ═══ -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar__overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar__content glass">
+      <button class="cart-sidebar__close" id="cartClose" aria-label="Close cart">&times;</button>
+      <div class="cart-sidebar__header">
+        <h2 class="cart-sidebar__title">Shopping Bag</h2>
+        <span class="cart-sidebar__count" id="cartCountLabel">0 items</span>
+      </div>
+      <div class="cart-sidebar__items" id="cartItemsContainer">
+        <!-- Dynamic cart elements loaded by app.js -->
+      </div>
+      
+      <!-- Promo code validation segment -->
+      <div class="cart-sidebar__coupon-row" style="margin-bottom: 1.5rem; display: flex; gap: 0.5rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1rem;">
+        <input type="text" id="cartCouponInput" placeholder="Enter code (e.g. SAVE50)" style="flex: 1; padding: 0.6rem 1rem; font-family: var(--font-body); font-size: 0.85rem; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-sm); outline: none; color: var(--color-ink);" />
+        <button id="cartCouponApply" style="padding: 0.6rem 1.2rem; background: var(--color-ink); color: white; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600;">Apply</button>
+      </div>
+
+      <div class="cart-sidebar__footer">
+        <div class="cart-sidebar__total-row" id="cartSubtotalRow">
+          <span>Subtotal</span>
+          <span class="cart-sidebar__total" id="cartSubtotal">$0.00</span>
+        </div>
+        <div class="cart-sidebar__total-row" id="cartDiscountRow" style="display: none; margin-top: 0.5rem; color: var(--color-rose); font-size: 0.95rem;">
+          <span>Discount (50%)</span>
+          <span id="cartDiscountAmount">-$0.00</span>
+        </div>
+        <div class="cart-sidebar__total-row" id="cartFinalTotalRow" style="display: none; margin-top: 0.5rem; border-top: 1px dashed rgba(255,255,255,0.25); padding-top: 0.5rem; font-weight:700;">
+          <span>Total</span>
+          <span class="cart-sidebar__total" id="cartFinalTotal">$0.00</span>
+        </div>
+        <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1.5rem;" id="cartCheckoutBtn">
+          <span class="btn-magnetic-inner">Proceed to Checkout</span>
+        </button>
+
+        <div class="cart-sidebar__trust" style="margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.65rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1rem; align-items: center; text-align: center;">
+          <div style="display: flex; gap: 0.4rem; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 600; color: var(--color-ink); text-transform: uppercase; letter-spacing: 0.05em;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.15rem;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Secure SSL Checkout
+          </div>
+          <div style="font-size: 0.72rem; color: var(--color-ink-muted); line-height: 1.4; max-width: 320px;">
+            Your transaction is secure and encrypted. Instantly delivered to your email inbox.
+          </div>
+          <div style="display: flex; gap: 0.75rem; align-items: center; justify-content: center; opacity: 0.75; margin-top: 0.25rem;">
+            <span style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; color: var(--color-ink);">VISA</span>
+            <span style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; color: var(--color-ink);">MC</span>
+            <span style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; color: var(--color-ink);">AMEX</span>
+            <span style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; color: var(--color-ink);">PAYPAL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SEARCH OVERLAY ═══ -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay__blur-bg"></div>
+    <button class="search-overlay__close" id="searchClose" aria-label="Close search">&times;</button>
+    <div class="search-overlay__content">
+      <div class="search-overlay__field">
+        <svg class="search-overlay__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-overlay__input" id="searchInput" placeholder="Search templates, guides, socials, business..." aria-label="Search site" autocomplete="off" />
+      </div>
+      <div class="search-overlay__results-wrapper">
+        <div class="search-overlay__section" id="searchProductsSection">
+          <h3 class="search-overlay__section-title">Canva Templates</h3>
+          <div class="search-overlay__grid" id="searchProductsResults"></div>
+        </div>
+        <div class="search-overlay__section" id="searchBlogSection">
+          <h3 class="search-overlay__section-title">Tips & Tutorials</h3>
+          <div class="search-overlay__grid" id="searchBlogResults"></div>
+        </div>
+        <div class="search-overlay__empty" id="searchEmptyState">No matching templates or tutorials found.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FLOATING WYSIWYG FORMAT BAR ═══ -->
+  <div class="wysiwyg-toolbar" id="wysiwygToolbar">
+    <button class="wysiwyg-btn" data-command="bold" title="Bold"><b>B</b></button>
+    <button class="wysiwyg-btn" data-command="italic" title="Italic"><i>I</i></button>
+    <button class="wysiwyg-btn" data-command="underline" title="Underline"><u>U</u></button>
+    <span class="wysiwyg-separator"></span>
+    <button class="wysiwyg-btn" data-command="removeFormat" title="Clear Formatting">⌫</button>
+  </div>
+
+  <!-- ═══ LEAD CAPTURE MODAL ═══ -->
+  <div class="lead-modal" id="leadModal">
+    <div class="lead-modal__overlay" id="leadModalOverlay"></div>
+    <div class="lead-modal__content glass">
+      <button class="lead-modal__close" id="leadModalClose" aria-label="Close modal">&times;</button>
+      <div class="lead-modal__body">
+        <div class="lead-modal__badge">EXCLUSIVE GIFT</div>
+        <h2 class="lead-modal__title">Wait! Get Your Free Aesthetic Starter Pack ✦</h2>
+        <p class="lead-modal__desc">
+          Subscribe to our newsletter and instantly receive <strong>3 Premium Canva Templates</strong> to level up your home decor social feed today.
+        </p>
+        <form class="lead-modal__form" id="leadModalForm">
+          <input type="email" class="lead-modal__input" id="leadModalEmail" placeholder="Enter your best email..." required />
+          <button type="submit" class="lead-modal__submit btn-primary">
+            <span class="btn-magnetic-inner">Send Me My Gift!</span>
+          </button>
+        </form>
+        <p class="lead-modal__footer">No spam. Unsubscribe anytime. Delivered instantly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ GLASSMORPHIC AUTOMATED CHATBOT ═══ -->
+  <div class="chatbot-widget" id="chatbotWidget">
+    <!-- Chat Toggle Button -->
+    <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open support chat">
+      <span class="chatbot-toggle__icon">💬</span>
+      <span class="chatbot-toggle__dot"></span>
+    </button>
+
+    <!-- Chat Window Container -->
+    <div class="chatbot-window glass" id="chatbotWindow">
+      <div class="chatbot-header">
+        <div class="chatbot-header__info">
+          <span class="chatbot-header__avatar">✦</span>
+          <div>
+            <h4 class="chatbot-header__name">Aura</h4>
+            <p class="chatbot-header__status">Store Assistant &bull; Online</p>
+          </div>
+        </div>
+        <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">&times;</button>
+      </div>
+
+      <div class="chatbot-messages" id="chatbotMessages">
+        <!-- Initial assistant message loaded by JS -->
+      </div>
+
+      <div class="chatbot-input-area">
+        <div class="chatbot-quick-replies" id="chatbotQuickReplies">
+          <!-- Buttons rendered dynamically -->
+        </div>
+        <form class="chatbot-form" id="chatbotForm">
+          <input type="text" id="chatbotInput" placeholder="Type a message..." autocomplete="off" required />
+          <button type="submit" class="chatbot-submit" aria-label="Send message">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ TOAST CONTAINER ═══ -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
