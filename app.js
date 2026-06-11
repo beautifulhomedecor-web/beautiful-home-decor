@@ -1539,15 +1539,15 @@
         }
       }
 
-      // Add to bag click
-      const addCartBtn = card.querySelector('button.product-card__add-to-cart');
-      if (addCartBtn) {
-        addCartBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          addToCart(p.id);
-          DOM.cartSidebar.classList.add('open');
-        });
-      }
+      // Make entire card clickable to open cart and add item (great for mobile/tablet usability)
+      card.addEventListener('click', (e) => {
+        // If clicking on edit button or wishlist, do not trigger cart addition
+        if (e.target.closest('.product-card__edit-btn') || e.target.closest('.product-card__wishlist')) {
+          return;
+        }
+        addToCart(p.id);
+        DOM.cartSidebar.classList.add('open');
+      });
 
       DOM.productsGrid.appendChild(card);
     });

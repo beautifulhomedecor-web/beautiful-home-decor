@@ -1017,8 +1017,10 @@ body.loader-done .hero__visual {
 .product-card__image {
   position: relative;
   aspect-ratio: 4/5;
-  overflow: hidden;
+  overflow: visible;
   background: linear-gradient(135deg, #f0e8dc, #e8daca);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
 }
 
 .product-card__image img {
@@ -1027,6 +1029,8 @@ body.loader-done .hero__visual {
   object-fit: cover;
   transition: transform 1.4s var(--ease-apple);
   will-change: transform;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
 }
 
 .product-card:hover .product-card__image img {
