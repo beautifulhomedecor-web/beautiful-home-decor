@@ -597,8 +597,9 @@
     };
 
     window.addEventListener('load', () => {
-      // Min 1.8s to show the loader brand; max 3.5s total
-      setTimeout(hideLoader, 1800);
+      // Min 1.8s (or 800ms on mobile) to show the loader brand; max 3.5s total
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      setTimeout(hideLoader, isMobile ? 800 : 1800);
     });
     
     // Absolute fallback in case 'load' never fires (e.g. offline)

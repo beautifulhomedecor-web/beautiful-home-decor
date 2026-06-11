@@ -2047,7 +2047,7 @@ body.loader-done .page-content {
 @media (max-width: 968px) {
   /* Navigation */
   .nav-wrapper {
-    top: 1rem;
+    top: 3.1rem;
     width: min(94%, 600px);
   }
 
@@ -2138,6 +2138,10 @@ body.loader-done .page-content {
   }
 
   /* Hero */
+  .hero {
+    padding-top: 7rem;
+  }
+
   .hero__inner {
     grid-template-columns: 1fr;
     text-align: center;
@@ -2146,12 +2150,14 @@ body.loader-done .page-content {
 
   .hero__desc {
     margin-inline: auto;
+    margin-bottom: 2.2rem;
   }
 
   .hero__actions {
     justify-content: center;
     flex-wrap: wrap;
-    gap: var(--space-md);
+    gap: 0.85rem;
+    margin-bottom: 2rem;
   }
 
   .hero__visual {
@@ -2212,7 +2218,7 @@ body.loader-done .page-content {
 
 @media (max-width: 640px) {
   .hero {
-    padding-top: 5rem;
+    padding-top: 6.5rem;
     padding-bottom: 2rem;
   }
 
@@ -2312,7 +2318,7 @@ body.loader-done .page-content {
 
 @media (max-width: 420px) {
   .nav-wrapper {
-    top: 0.75rem;
+    top: 2.9rem;
     width: 94%;
   }
 
@@ -3893,7 +3899,7 @@ body.admin-active .blog-card:hover .card-delete-btn {
     border-radius: var(--radius-lg);
     padding: 1.5rem 1rem;
     width: min(92%, 600px);
-    margin: -1.5rem auto 1.5rem auto;
+    margin: 2rem auto;
   }
 }
 
