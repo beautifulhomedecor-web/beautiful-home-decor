@@ -155,8 +155,8 @@
       colors: ['#c9a96e', '#1a1008'],
       link: 'https://beautifulhomedecor.gumroad.com/l/lbylpf',
       description: '10 stunning Instagram templates to create a cohesive and elegant feed. Canva editable — instant download.',
-      discountCode: 'INSTA50 — 50% off',
-      buttonText: 'Buy Now',
+      discountCode: 'INSTA50 — 50% off = $3.50',
+      buttonText: 'Get Templates Now',
       discountText: '→ $3.50 with INSTA50'
     },
     {
@@ -168,8 +168,9 @@
       badge: 'BEST VALUE',
       colors: ['#faf6f0', '#c9a96e', '#1a1008'],
       link: 'https://beautifulhomedecor.gumroad.com',
-      description: 'Get both Pinterest + Instagram template packs. 20 total templates. Save $2!',
+      description: 'Get both Pinterest and Instagram template packs. 20 total templates. Save $2!',
       discountCode: 'SAVE50 or INSTA50 — 50% off',
+      buttonText: 'Get Bundle Now',
       discountText: '→ $6 with codes'
     }
   ];
@@ -257,7 +258,7 @@
     {
       id: 'testimonial-1',
       stars: 5,
-      quote: "These templates are stunning and so easy to use! My Pinterest engagement has grown so much since I started using them.",
+      quote: "These templates are stunning and so easy to use! My Pinterest engagement has grown so much.",
       authorName: "Emily R.",
       authorRole: "Home Decor Blogger",
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80"
@@ -288,7 +289,7 @@
       category: 'PINTEREST TIPS',
       date: 'Jun 2, 2026',
       title: '5 Pinterest Mistakes Costing You Views in 2026',
-      excerpt: 'Avoid these common mistakes holding your Pinterest back.'
+      excerpt: 'Avoid these common mistakes holding your Pinterest back from thousands of viewers.'
     },
     {
       id: 'blog-2',
@@ -296,7 +297,7 @@
       category: 'CANVA TUTORIAL',
       date: 'May 28, 2026',
       title: 'How to Make Pinterest Pins in 3 Minutes',
-      excerpt: 'Create scroll-stopping pins fast using ready-made templates.'
+      excerpt: 'Create scroll-stopping pins fast using ready-made Canva templates.'
     },
     {
       id: 'blog-3',
@@ -340,6 +341,9 @@
             parsedProducts[0].image !== 'assets/preview-6-hero-cover.png' ||
             !parsedProducts[0].buttonText ||
             parsedProducts[0].buttonText !== 'Buy Now' ||
+            !parsedProducts[2] ||
+            parsedProducts[2].buttonText !== 'Get Bundle Now' ||
+            parsedProducts[1].buttonText !== 'Get Templates Now' ||
             !parsedProducts[0].discountText) {
           needsReset = true;
         }
@@ -356,7 +360,8 @@
         if (parsedTestim.length === 0 || 
             !parsedTestim[0] ||
             !parsedTestim[0].quote ||
-            !parsedTestim[0].quote.includes('since I started using them') ||
+            !parsedTestim[0].quote.includes('My Pinterest engagement has grown so much') ||
+            parsedTestim[0].quote.includes('since I started using them') ||
             !parsedTestim[0].avatar.startsWith('https://images.unsplash.com')) {
           needsReset = true;
         }
@@ -375,7 +380,9 @@
         if (parsedBlog.length === 0 ||
             !parsedBlog[0] ||
             parsedBlog[0].category !== 'PINTEREST TIPS' ||
-            parsedBlog[0].excerpt !== 'Avoid these common mistakes holding your Pinterest back.' ||
+            parsedBlog[0].excerpt !== 'Avoid these common mistakes holding your Pinterest back from thousands of viewers.' ||
+            !parsedBlog[1] ||
+            parsedBlog[1].excerpt !== 'Create scroll-stopping pins fast using ready-made Canva templates.' ||
             !parsedBlog[0].image.startsWith('https://images.unsplash.com') ||
             !parsedBlog[2] ||
             parsedBlog[2].image !== 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=80') {
@@ -1499,8 +1506,8 @@
       const priceOrigHtml = p.originalPrice ? `<span class="original">$${p.originalPrice.toLocaleString()}</span>` : '';
       const editBtnHtml = state.isAdmin ? `<button class="product-card__edit-btn" data-id="${p.id}">Edit</button>` : '';
 
-      const btnText = p.buttonText || 'Add to Bag';
-      const buyBtnHtml = `<button class="product-card__add-to-cart" data-id="${p.id}" aria-label="Add to bag">${btnText}</button>`;
+      const btnText = p.buttonText || 'Buy Now';
+      const buyBtnHtml = `<a href="${p.link}" target="_blank" rel="noopener" class="product-card__add-to-cart" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; text-align:center;" data-id="${p.id}" aria-label="Buy on Gumroad">${btnText}</a>`;
 
       card.innerHTML = `
         <div class="product-card__image">
@@ -1540,14 +1547,21 @@
         }
       }
 
-      // Make entire card clickable to open cart and add item (great for mobile/tablet usability)
+      // Stop propagation on the buy button click to avoid double navigation
+      const buyBtn = card.querySelector('.product-card__add-to-cart');
+      if (buyBtn) {
+        buyBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      }
+
+      // Make entire card clickable to open Gumroad link (great for mobile/tablet usability)
       card.addEventListener('click', (e) => {
-        // If clicking on edit button or wishlist, do not trigger cart addition
-        if (e.target.closest('.product-card__edit-btn') || e.target.closest('.product-card__wishlist')) {
+        // If clicking on edit button or wishlist, do not trigger navigation
+        if (e.target.closest('.product-card__edit-btn') || e.target.closest('.product-card__wishlist') || e.target.closest('.product-card__add-to-cart')) {
           return;
         }
-        addToCart(p.id);
-        DOM.cartSidebar.classList.add('open');
+        window.open(p.link, '_blank', 'noopener');
       });
 
       DOM.productsGrid.appendChild(card);
@@ -2414,19 +2428,22 @@
     });
 
     // Update numbers
-    DOM.cartSubtotal.textContent = `$${subtotal.toLocaleString()}`;
-    DOM.cartCountLabel.textContent = `${totalItems} ${totalItems === 1 ? 'item' : 'items'}`;
-    DOM.navCartBadge.textContent = totalItems;
+    if (DOM.cartSubtotal) DOM.cartSubtotal.textContent = `$${subtotal.toLocaleString()}`;
+    if (DOM.cartCountLabel) DOM.cartCountLabel.textContent = `${totalItems} ${totalItems === 1 ? 'item' : 'items'}`;
     
-    // Toggle badge animation scale (CSS badge-pop spring animation)
-    if (totalItems > 0) {
-      DOM.navCartBadge.classList.remove('badge-pop');
-      void DOM.navCartBadge.offsetWidth; // Force reflow
-      DOM.navCartBadge.classList.add('badge-pop');
+    if (DOM.navCartBadge) {
+      DOM.navCartBadge.textContent = totalItems;
       
-      DOM.navCartBadge.addEventListener('animationend', () => {
+      // Toggle badge animation scale (CSS badge-pop spring animation)
+      if (totalItems > 0) {
         DOM.navCartBadge.classList.remove('badge-pop');
-      }, { once: true });
+        void DOM.navCartBadge.offsetWidth; // Force reflow
+        DOM.navCartBadge.classList.add('badge-pop');
+        
+        DOM.navCartBadge.addEventListener('animationend', () => {
+          DOM.navCartBadge.classList.remove('badge-pop');
+        }, { once: true });
+      }
     }
 
     const discountRow = document.getElementById('cartDiscountRow');
@@ -2740,9 +2757,10 @@
 
     let targetTime = localStorage.getItem('countdown_target_time');
     
-    if (!targetTime || parseInt(targetTime) <= Date.now()) {
+    // Check if targetTime is valid and in the future
+    if (!targetTime || isNaN(parseInt(targetTime)) || parseInt(targetTime) <= Date.now()) {
       targetTime = Date.now() + 24 * 60 * 60 * 1000;
-      localStorage.setItem('countdown_target_time', targetTime);
+      localStorage.setItem('countdown_target_time', targetTime.toString());
     } else {
       targetTime = parseInt(targetTime);
     }
@@ -2751,9 +2769,10 @@
       const now = Date.now();
       let diff = targetTime - now;
 
+      // Reset to 24 hours only when it reaches zero
       if (diff <= 0) {
         targetTime = Date.now() + 24 * 60 * 60 * 1000;
-        localStorage.setItem('countdown_target_time', targetTime);
+        localStorage.setItem('countdown_target_time', targetTime.toString());
         diff = 24 * 60 * 60 * 1000;
       }
 
@@ -3046,10 +3065,10 @@
     const botResponses = {
       welcome: "Hi! I'm Aura, your virtual design assistant. How can I help you elevate your feed today? ✦",
       templates: "All our Canva templates are 100% compatible with the **FREE version of Canva**. When you make a purchase, you'll receive a PDF with template links. Clicking those links instantly adds them to your Canva account. You can then edit fonts, layouts, and colors with a single click!",
-      discounts: "We have two active promotions running! Use code **SAVE50** at checkout to get 50% off any Pinterest pack, or use code **INSTA50** to get 50% off Instagram sets! Apply them in your shopping bag before check out.",
+      discounts: "We have active promotions running! You can use code **SAVE50** (for Pinterest templates/bundles) or **INSTA50** (for Instagram templates) directly on the Gumroad checkout page to get 50% off your purchase. Simply enter the code in the discount field on Gumroad when buying!",
       downloads: "Your template download PDF is delivered instantly to your email inbox as soon as your checkout completes. If you haven't received it within 5 minutes, please check your spam folder or contact support at tumpalapavansai@gmail.com.",
       commercial: "Yes! All templates include commercial rights. You can use them to create visual assets for your own personal brand, business, or for client accounts. However, you cannot resell the editable Canva templates themselves.",
-      buying: "To buy our templates, click **Add to Bag** on any product in the **Store** section. When you're ready, click the Shopping Bag icon in the top right, apply discount codes (like **SAVE50**), and click **Proceed to Checkout**. Transactions are secure and handled via Gumroad using Card or PayPal!",
+      buying: "To buy our templates, click **Buy Now** on any product in the **Store** section. It will open the secure Gumroad page directly in a new tab where you can complete your purchase safely. Transactions are handled securely via Gumroad using Card or PayPal!",
       benefits: "Our templates help home decor creators, designers, and visual bloggers **grow their Pinterest & Instagram presence** with beautiful, cohesive, and professional graphics. ✦\n\n**Key Benefits:**\n• **Save Hours**: Stop designing from scratch. Just drag-and-drop your photos in Canva.\n• **High Engagement**: Optimized designs to grab attention and drive link clicks.\n• **Fully Customizable**: Change all colors, fonts, and photos with free Canva accounts.\n• **Consistent Brand**: Maintain a gorgeous, high-end visual aesthetic across your feed!",
       default: "Thanks for your message! Since I'm an automated assistant, I've prepared a direct email draft with your question. Click the **Send as Email** button below to send it to our inbox, or write to us at tumpalapavansai@gmail.com!"
     };
@@ -3279,6 +3298,9 @@
   function init() {
     loadState();
     
+    // Priority / Critical Initializers (must run first to avoid script crash interruption)
+    initCountdownTimer();
+    
     // Core Modules
     initLoader();
     initScrollProgress();
@@ -3300,7 +3322,6 @@
     initNavPill();
     initScrollVelocity();
     initSpringStagger();
-    initCountdownTimer();
     initSmoothMomentumScroll();
     
     // Dynamic CMS & Custom Overlays
